@@ -1,0 +1,23 @@
+- hosts: my_vm
+  become: yes
+  tasks:
+    - name: Stop and remove MySQL container for Ibtahaj
+      community.docker.docker_container:
+        name: mysql-ibtahaj
+        state: absent
+
+    - name: Stop and remove Zabbix container for Ibtahaj
+      community.docker.docker_container:
+        name: zabbix-ibtahaj
+        state: absent
+
+    - name: Stop and remove Nagios container for Ibtahaj
+      community.docker.docker_container:
+        name: nagios-ibtahaj
+        state: absent
+
+    - name: Stop and remove Prometheus container for Ibtahaj
+      community.docker.docker_container:
+        name: prometheus-ibtahaj
+        state: absent
+
